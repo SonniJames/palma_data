@@ -17,28 +17,44 @@
       border: none;
     }
 
-    .error {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 100px;
-      font-size: 24px;
-      color: red;
+    .logout {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #205221;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .logout:hover {
+      background-color: #2f6a32;
     }
   </style>
 </head>
 <body>
   <script>
-    // Verificar si el usuario está autenticado
     if (sessionStorage.getItem("auth") !== "ok") {
-      // Si no está autenticado, redirigir al login
       window.location.href = "index.html";
     }
   </script>
 
-  <!-- Si pasó la validación, se carga el iframe -->
+  <!-- Botón de cerrar sesión -->
+  <button class="logout" onclick="logout()">Cerrar sesión</button>
+
   <iframe 
     src="https://app.powerbi.com/view?r=eyJrIjoiN2NlMWRhNDEtNzc1YS00YjNjLTlkZGItNTdjNjM1ZWYwZjcxIiwidCI6IjJlZDU1NzRjLWY5YmEtNDQyNi05NjU4LWU0NzdhZDc0MzlkYiIsImMiOjR9" 
     allowFullScreen="true">
   </iframe>
+
+  <script>
+    function logout() {
+      sessionStorage.removeItem("auth");
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
