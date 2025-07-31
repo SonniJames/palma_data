@@ -5,7 +5,7 @@
   <title>PalmaData Login</title>
   <style>
     body {
-      background-color: #f9f0dc; /* Color de fondo como en imagen 2 */
+      background-color: #f9f0dc;
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
@@ -26,6 +26,7 @@
       border-radius: 12px;
       box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
       text-align: center;
+      width: 300px;
     }
 
     .login-box input {
@@ -38,7 +39,7 @@
     }
 
     .login-box button {
-      background-color: #205221; /* Verde oscuro */
+      background-color: #205221;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -73,7 +74,7 @@
       const clave = document.getElementById("pass").value;
 
       if (usuario === "nixonson" && clave === "123456") {
-        window.location.href = "https://app.powerbi.com/view?r=eyJrIjoiN2NlMWRhNDEtNzc1YS00YjNjLTlkZGItNTdjNjM1ZWYwZjcxIiwidCI6IjJlZDU1NzRjLWY5YmEtNDQyNi05NjU4LWU0NzdhZDc0MzlkYiIsImMiOjR9";
+        window.location.href = "dashboard.html";
       } else {
         document.getElementById("error").style.display = "block";
       }
