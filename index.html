@@ -74,6 +74,8 @@
       const clave = document.getElementById("pass").value;
 
       if (usuario === "nixonson" && clave === "123456") {
+        // Guardar sesión para permitir acceso
+        sessionStorage.setItem("auth", "ok");
         window.location.href = "dashboard.html";
       } else {
         document.getElementById("error").style.display = "block";
